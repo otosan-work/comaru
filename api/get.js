@@ -5,7 +5,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
   database.find(req.query).then(records => {
     res.contentType('json');
-    res.send(records);
+    res.send({ Response: records });
   }).catch(error => {
     throw error;
   });
